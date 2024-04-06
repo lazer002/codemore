@@ -1,10 +1,10 @@
 
 import "../index.css";
 import React,{useState} from "react"
-import { NavLink, useNavigate } from "react-router-dom";
+// import {  useNavigate } from "react-router-dom";
 
 function Footer() {
-const navigate = useNavigate()
+// const navigate = useNavigate()
 const [user1,setUser1]=useState({
   newsemail:""
 

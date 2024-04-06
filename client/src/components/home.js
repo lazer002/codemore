@@ -14,8 +14,8 @@ import go from "./images/go.png";
 import info from "./images/info.png";
 import swiggy from "./images/swiggy.png";
 import logi from "./images/logi.png";
-import meeting from "./images/meeting.png";
-import service from "./images/service.png";
+// import meeting from "./images/meeting.png";
+// import service from "./images/service.png";
 
 import cplus from "./images/1.png";
 import digital from "./images/2.png";
@@ -36,7 +36,7 @@ import digitals from "./images/2s.png";
 import cs from "./images/3s.png";
 import pythons from "./images/4s.png";
 import webs from "./images/5s.png";
-import angulars from "./images/6s.png";
+// import angulars from "./images/6s.png";
 import sqls from "./images/7s.png";
 import htmls from "./images/8s.png";
 import javas from "./images/9s.png";
@@ -79,7 +79,7 @@ function Home() {
   {
     contectdata();
   },
-  []);
+  [contectdata]);
   
  
 let name,value;
@@ -140,7 +140,7 @@ items.forEach((el) => {
         <div className="row ">
           <div className="col-md-6 p-3">
             <div className="info1 icon1 p-5">
-              <img src={htmls} className="img-fluid" />
+              <img src={htmls} className="img-fluid" alt="html"/>
             </div>
 
             <div className="display-3 fw-semi-bold py-2">Code+</div>
@@ -148,7 +148,7 @@ items.forEach((el) => {
               Best Courses are waiting to enrich your skill
             </div>
             <div className=" info1 icon2 p-5">
-              <img src={javas} className="img-fluid" />
+              <img src={javas} className="img-fluid"  alt="javas"/>
             </div>
 
             <div className="fw-semi-bold py-2 fs-4">
@@ -156,11 +156,11 @@ items.forEach((el) => {
               skills needed to excel in the world of programming.
             </div>
             <div className=" info1 icon1 p-5">
-              <img src={c} className="img-fluid" />
+              <img src={c} className="img-fluid"  alt="c"/>
             </div>
            
             <div className=" info1 icon5 p-5">
-              <img src={html} className="img-fluid" />
+              <img src={html} className="img-fluid"  alt="html"/>
             </div>
          
           </div>
@@ -173,7 +173,7 @@ items.forEach((el) => {
               data-bs-ride="carousel"
             >
                 <div className="info1 icon4 p-5">
-              <img src={html} className="img-fluid" />
+              <img src={html} className="img-fluid"  alt="html"/>
             </div>
               <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="4000">
@@ -206,7 +206,7 @@ items.forEach((el) => {
                 </div>
               </div>
               <div className=" info1 icon3 p-5">
-              <img src={androids} className="img-fluid" />
+              <img src={androids} className="img-fluid"  alt="android"/>
             </div>
             </div>
           </div>
@@ -236,7 +236,7 @@ items.forEach((el) => {
             </div>
             <div className="col-2">   
             <div className="  info1 p-5">
-              <img src={html} className="img-fluid" />
+              <img src={html} className="img-fluid" alt="html"/>
             </div></div>
             
             <div className="col-12 contect_form">
@@ -610,7 +610,7 @@ items.forEach((el) => {
        
           <div className="row  justify-content-center">
           <div className=" info1 icon3 p-5">
-              <img src={bootstraps} className="img-fluid" />
+              <img src={bootstraps} className="img-fluid" alt="html"/>
             </div>
             <div className="col-lg-6">
               <div className="display-4 fw-semi-bolder pb-4">
@@ -632,7 +632,7 @@ items.forEach((el) => {
                 <div className="col-4 amazone ">
                   <img src={ama} alt="amazone" className="img-fluid shadow hover" />
                   <div className=" info1 icon4 p-5">
-              <img src={android} className="img-fluid " />
+              <img src={android} className="img-fluid " alt="html"/>
             </div>
                 </div>
 
@@ -665,7 +665,7 @@ items.forEach((el) => {
                 <div className="col-4 brand_w my-3 p-3 shadow">
                   <h5 className="ms-3 hover">+ many more</h5>
                   <div className=" info1 icon1 p-5">
-              <img src={cplus} className="img-fluid" />
+              <img src={cplus} className="img-fluid" alt="html"/>
             </div>
                 </div>
               </div>
@@ -755,29 +755,29 @@ items.forEach((el) => {
             <div className="col-lg-6 p-5">
          
             <div className=" info1 icon4 p-5">
-              <img src={pythons} className="img-fluid" />
+              <img src={pythons} className="img-fluid" alt="html"/>
             </div>
             <div className=" info1 icon3 p-5">
-              <img src={android} className="img-fluid" />
+              <img src={android} className="img-fluid"  alt="android"/>
             </div>
          
            
             <div className=" info1 icon1 p-5">
-              <img src={phps} className="img-fluid" />
+              <img src={phps} className="img-fluid"  alt="phps"/>
             </div>
           
           </div>  
            <div className=" info1 icon1 p-5">
-              <img src={cs} className="img-fluid" />
+              <img src={cs} className="img-fluid"  alt="cs"/>
             </div>
             <div className=" info1 icon2 p-5">
-              <img src={jquerys} className="img-fluid" />
+              <img src={jquerys} className="img-fluid"  alt="jquerys"/>
             </div>
             <div className=" info1 icon6 p-5">
-              <img src={cpluss} className="img-fluid" />
+              <img src={cpluss} className="img-fluid"  alt="cpluss"/>
             </div>
             <div className=" info1 icon7 p-5">
-              <img src={sqls} className="img-fluid" />
+              <img src={sqls} className="img-fluid"  alt="sqls"/>
             </div>
            
         </div>
@@ -796,7 +796,7 @@ items.forEach((el) => {
               industry!
             </div>
             <div className=" info1 icon1 p-5">
-              <img src={sqls} className="img-fluid" />
+              <img src={sqls} className="img-fluid" alt="sqls"/>
             </div>
             <div className="py-2">
               Our classes are taught by industry experts who have real-world
@@ -810,12 +810,12 @@ items.forEach((el) => {
               Enroll Now
             </button>
             <div className=" info1 icon2 p-5">
-              <img src={androids} className="img-fluid" />
+              <img src={androids} className="img-fluid" alt="androids"/>
             </div>
           </div>
           <div className="col-md-6 p-5  order-1">
           <div className=" info1 icon6 p-5">
-              <img src={cpluss} className="img-fluid" />
+              <img src={cpluss} className="img-fluid" alt="cpluss"/>
             </div>
             <div
               id="carouselExampleRide"
@@ -823,7 +823,7 @@ items.forEach((el) => {
               data-bs-ride="carousel"
             >
                 <div className=" info1 icon7 p-5">
-              <img src={pythons} className="img-fluid" />
+              <img src={pythons} className="img-fluid" alt="pythons"/>
             </div>
               <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="4000">
@@ -878,25 +878,25 @@ items.forEach((el) => {
               <div className="row justify-content-end">
                 <div className="col-sm-4">   
                 <div className="info1 icon1 p-5">
-              <img src={web} className="img-fluid" />
+              <img src={web} className="img-fluid" alt="web"/>
             </div>
             
             <div className=" info1 icon1 p-5">
-              <img src={phps} className="img-fluid" />
+              <img src={phps} className="img-fluid" alt="phps"/>
             </div>
           
         
            <div className=" info1 icon2 p-5">
-              <img src={cs} className="img-fluid" />
+              <img src={cs} className="img-fluid" alt="cs"/>
             </div>
             <div className=" info1 icon3 p-5">
-              <img src={jquerys} className="img-fluid" />
+              <img src={jquerys} className="img-fluid" alt="jquerys"/>
             </div>
             <div className=" info1 icon4 p-5">
-              <img src={cpluss} className="img-fluid" />
+              <img src={cpluss} className="img-fluid" alt="cpluss"/>
             </div>
             <div className=" info1 icon6 p-5">
-              <img src={sqls} className="img-fluid" />
+              <img src={sqls} className="img-fluid" alt="sqls"/>
             </div>
 
 

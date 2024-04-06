@@ -10,6 +10,7 @@ const Authentication = require("../middelware/authentication")
 
 
 router.post('/signup', async(req,res) => {
+    console.log(req.body);
 const {Username,Email,Password,Phone_number} = req.body
 if(!Username||!Email||!Password||!Phone_number){
 return res.status(422).json({error:"fill all fileds"})

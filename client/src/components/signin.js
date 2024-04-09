@@ -5,7 +5,7 @@ import javas from "./images/9s.png";
 import angulars from "./images/6s.png";
 import sqls from "./images/7s.png";
 import cplus from "./images/1.png";
-
+import axios from 'axios'
 
 function Signin() {
 
@@ -22,24 +22,12 @@ const handleInput=(e)=>{
 }
 
 const postdata=async(e)=>{
-
     e.preventDefault()
-    const {Email,Password}=user
-
-    const res=await fetch("/signin",{
-method:"post",
-headers:{
-
-    "Content-Type":"application/json" 
-},
-body:JSON.stringify({
-    Email,Password
-})
-
-    });
+    console.log(user);
+    const res=await axios.post("http://localhost:8484/signin",{user});
  
-const data=await res.json()
-if(data.status === 422 || !data){
+
+if(res.status === 401 || !res){
 window.alert("invalid register" )                      
 console.log("invalid register")   
 }

@@ -5,7 +5,7 @@ import android from "./images/13.png";
 import cpluss from "./images/1s.png";
 import digitals from "./images/2s.png";
 import bootstraps from "./images/12s.png";
-
+import axios from 'axios'
 function Signup() {
 
 const navigate = useNavigate()
@@ -22,22 +22,10 @@ const handleInput = (e) =>{
 
 const postdata=async(e)=>{
     e.preventDefault()
-    const {Username,Email,Password,Phone_number}=user
 
-    const res = await fetch("/signup",{
-method:"post",
-headers:{
+    const res=await axios.post("http://localhost:8484/signup",user);
 
-    "content-type":"application/json" 
-},
-body:JSON.stringify({
-    Username,Email,Password,Phone_number
-})
-
-    });
-
-const data=await res.json()
-if(data.status === 422 || !data){
+if(res.status === 422 || !res){
 window.alert("invalid register" )
 console.log("invalid register") 
 

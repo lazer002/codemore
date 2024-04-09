@@ -87,6 +87,7 @@ signup_schema.methods.generateAuthtoken = async function () {
       const token = jwt.sign({ _id: this._id }, process.env.Secret_key);
       this.tokens.push({ token });
       await this.save();
+      console.log(token,'token');
       return token;
     } catch (err) {
       console.error(err);

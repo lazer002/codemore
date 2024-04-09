@@ -10,6 +10,7 @@ const Authentication = require("../middelware/authentication")
 
 
 router.post('/signup', async(req,res) => {
+    console.log(req.body);
 const {Username,Email,Password,Phone_number} = req.body
 if(!Username||!Email||!Password||!Phone_number){
 return res.status(422).json({error:"fill all fileds"})
@@ -24,10 +25,7 @@ try{
 }
 
 const data =  new User({Username,Email,Password,Phone_number})
-const datasave = data.save()
-if(datasave){
-    res.status(201).json("data registered")
-}
+ await data.save()
 }
 catch(err){
     console.log(err)
@@ -70,26 +68,31 @@ catch(err){
 
 
 router.post('/signin',async(req,res)=>{
- 
-  const{Email,Password}=req.body;
+ console.log(req.body);
+ res.cookie('testCookie', 'Hello, world!');
+  const{Email,Password}=req.body.user;
   if(!Email||!Password){
   
       return res.status(422).json({massage:'pls enter valid password and email'})
   }
   try{
        const user=await User.findOne({Email:Email});
-      // console.log(user);
+    //   console.log(user,'k');
      
       if(user)
           {
         const isMatch=await bcrypt.compare(Password,user.Password);
           const token=await user.generateAuthtoken()
-          // console.log(token);
-
-          res.cookie("jwtoken",token,{
-              expires:new Date(Date.now()+ 600000000000),
-              httpOnly:true
-          });
+          console.log(token,'ggg');
+try {
+    res.cookie("jwtoken",token,{
+        expires:new Date(Date.now()+ 600000000000),
+        httpOnly:true
+    }); 
+} catch (error) {
+   console.log('fowjaofjwaofjowajfowjaofjwa'); 
+}
+     
           
        if(!isMatch)
       {
@@ -134,6 +137,7 @@ router.post('/signin',async(req,res)=>{
 
 
 router.get("/userpanel",Authentication,(req,res)=>{
+    
     res.send(req.rootUser)
 })
 

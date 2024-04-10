@@ -69,5 +69,33 @@ signup_schema.pre('save',async function (next) {
 //   };
 
 
+signup_schema.methods.generateAuthtoken = async function () {
+    try {
+      const token = jwt.sign({ _id: this._id }, process.env.Secret_key);
+      this.tokens.push({ token });
+      await this.save();
+      console.log(token,'token');
+      return token;
+    } catch (err) {
+      console.error(err);
+      throw err;
+    }
+  };
+
+
+
+  
+signup_schema.methods.addMessage = async function(Username,Email,Phone_number,subject,message){
+    try{
+this.messages=this.messages.concat({Username,Email,Phone_number,subject,message})
+await this.save()
+return this.messages
+    }
+    catch(err){
+    console.log(er)}
+}
+
+
+
 let Signup = mongoose.model("Code+", signup_schema)
 module.exports = Signup

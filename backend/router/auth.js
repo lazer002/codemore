@@ -10,6 +10,29 @@ const jwt = require("jsonwebtoken")
 
 
 
+router.post('/signup', async(req,res) => {
+    console.log(req.body);
+const {Username,Email,Password,Phone_number} = req.body
+if(!Username||!Email||!Password||!Phone_number){
+return res.status(422).json({error:"fill all fileds"})
+
+}
+try{
+ const exuser = await User.findOne({Email:Email})
+ if(exuser){
+     res.status(422).json({error:"already a account"})
+}else{
+     res.status(200).json({message:"account created"})
+}
+
+const data =  new User({Username,Email,Password,Phone_number})
+ await data.save()
+}
+catch(err){
+    console.log(err)
+}
+})
+
 
 router.post('/signup', async (req, res) => {
     console.log(req.body);
@@ -65,6 +88,7 @@ router.post('/signup', async (req, res) => {
 // })
 
 
+
 router.post('/signin', async (req, res) => {
     // console.log(req.body);
 
@@ -72,10 +96,7 @@ router.post('/signin', async (req, res) => {
     if (!Email || !Password) {
         return res.status(422).json({ message: 'Please enter valid password and email' });
     }
-
     try {
-
-    
         const user = await User.findOne({ Email: Email });
 
         if (!user) {

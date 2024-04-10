@@ -6,7 +6,9 @@ import angulars from "./images/6s.png";
 import sqls from "./images/7s.png";
 import cplus from "./images/1.png";
 import axios from 'axios'
+
 import { useCookies } from "react-cookie";
+
 function Signin() {
 
 const navigate = useNavigate()
@@ -25,6 +27,7 @@ const handleInput=(e)=>{
 const postdata=async(e)=>{
     e.preventDefault()
 
+
     const res=await axios.post("http://localhost:8484/signin",{user})
 if(res.status === 200){
   localStorage.setItem("jwtoken", res.data.token)
@@ -37,10 +40,8 @@ if(res.status === 200){
 // window.alert("invalid register" )                      
 // console.log("invalid register")   
 }
-// else{window.alert("valid register")
-// console.log("valid register") ;
-// navigate("/")
-// }
+
+
 }
 return(
 <>

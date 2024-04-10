@@ -8,7 +8,7 @@ import Signup from './components/signup'
 import Signin from './components/signin'
 import Header from './components/header'
 import Footer from './components/footer'
-import Userpanel from './components/Userpanel'
+import Userpanel from './components/Userpanel.jsx'
 import "./index.css";
 
 

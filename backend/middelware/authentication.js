@@ -9,6 +9,7 @@ try{
     console.log(req.cookie,'llll')
     const token= req.cookies.jwtoken;
 
+
 const verifyToken = jwt.verify(token,process.env.Secret_key);
 const rootUser = await User.findOne({_id:verifyToken._id,"tokens.token":token})
 if(!rootUser){

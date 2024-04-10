@@ -8,7 +8,9 @@ dotenv.config({path: './config.env'})
 const bodyparser = require('body-parser')
 const router = require('./router/auth')
 const cookie = require('cookie-parser');
-const session = require('cookie-session');
+
+const session = require('express-session');
+
 require('./db/config')
 app.use(express.json());
 app.use(bodyparser.urlencoded({extended:true}))

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt')
-const jwt = require("jsonwebtoken")
+
 
 
 
@@ -20,21 +20,8 @@ Password:{
 Phone_number:{
     type:String
 
-},
+}
 
-tokens:[{
-    token:
-    {type:String,
-        required:true
-    }
-    }],
-    messages:[{
-        Username:{ type:String},
-        Email:{ type:String},
-        Phone_number:{ type:String},
-        subject:{ type:String},
-        message:{ type:String}
-    }]
 })
 
 
@@ -107,9 +94,6 @@ return this.messages
     catch(err){
     console.log(er)}
 }
-
-
-
 
 
 

@@ -69,19 +69,6 @@ signup_schema.pre('save',async function (next) {
 //   };
 
 
-signup_schema.methods.generateAuthtoken = async function () {
-    try {
-      const token = jwt.sign({ _id: this._id }, process.env.Secret_key);
-      this.tokens.push({ token });
-      await this.save();
-      console.log(token,'token');
-      return token;
-    } catch (err) {
-      console.error(err);
-      throw err;
-    }
-  };
-
 
 
   

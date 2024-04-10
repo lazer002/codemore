@@ -30,15 +30,18 @@ const postdata=async(e)=>{
 
     const res=await axios.post("http://localhost:8484/signin",{user})
 if(res.status === 200){
+  console.log(cookies.jwtoken,'cookies.jwtoken.token');
   localStorage.setItem("jwtoken", res.data.token)
   localStorage.setItem("data", JSON.stringify(res.data.user))
   console.log(res.data,'res.data');
-  setCookie("jwtoken",res.data, {
+  setCookie("jwtoken",res.data.token, {
     path: "/"
   });
   navigate("/Userpanel")
 // window.alert("invalid register" )                      
 // console.log("invalid register")   
+}else{
+  console.log('jfwjafiojwajfiwajfijwa');
 }
 
 

@@ -27,13 +27,6 @@ app.use(session({
 // sessionStorage.setItem('jwtToken', jwtToken);
 
 
-// app.use((req, res, next) => {
-//     if (req.cookies.user_sid && !req.session.user) {
-//         res.clearCookie("user_sid")
-//     }
-//     next();
-// });
-
 var sessionChecker = (req, res, next) => {
     if (req.cookie.user_sid && req.session.user) {
         res.redirect('/index')

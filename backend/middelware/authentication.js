@@ -6,8 +6,8 @@ const jwt = require("jsonwebtoken")
 
 const Authentication = async (req,res,next)=>{
 try{
+    console.log(req.cookie,'llll')
     const token= req.cookies.jwtoken;
-    console.log(token)
 
 const verifyToken = jwt.verify(token,process.env.Secret_key);
 const rootUser = await User.findOne({_id:verifyToken._id,"tokens.token":token})

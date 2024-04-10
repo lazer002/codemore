@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt')
-const jwt = require("jsonwebtoken")
+
 
 
 
@@ -20,21 +20,8 @@ Password:{
 Phone_number:{
     type:String
 
-},
+}
 
-tokens:[{
-    token:
-    {type:String,
-        required:true
-    }
-    }],
-    messages:[{
-        Username:{ type:String},
-        Email:{ type:String},
-        Phone_number:{ type:String},
-        subject:{ type:String},
-        message:{ type:String}
-    }]
 })
 
 
@@ -80,36 +67,6 @@ signup_schema.pre('save',async function (next) {
 //       console.log(err);
 //     }
 //   };
-
-
-signup_schema.methods.generateAuthtoken = async function () {
-    try {
-      const token = jwt.sign({ _id: this._id }, process.env.Secret_key);
-      this.tokens.push({ token });
-      await this.save();
-      return token;
-    } catch (err) {
-      console.error(err);
-      throw err;
-    }
-  };
-
-
-
-  
-signup_schema.methods.addMessage = async function(Username,Email,Phone_number,subject,message){
-    try{
-this.messages=this.messages.concat({Username,Email,Phone_number,subject,message})
-await this.save()
-return this.messages
-    }
-    catch(err){
-    console.log(er)}
-}
-
-
-
-
 
 
 let Signup = mongoose.model("Code+", signup_schema)

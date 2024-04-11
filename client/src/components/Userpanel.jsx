@@ -1,33 +1,22 @@
 
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import Account from "./images/profile.png";
 import axios from 'axios'
 
 function Userpanel() {
-  const navigate = useNavigate()
+  axios.defaults.withCredentials=true
+
+  // const navigate = useNavigate()
   const [userdata, setUserData] = useState({})
-  const calluserpage = async () => {
-    try {
-      const res=await axios.get("http://localhost:8484/userpanel");
-
-      const data = await res.json()
-      console.log(data)
-      setUserData(data)
-      if (!res.status === 200) {
-        const error = new Error(res.error)
-        throw error
-      }
-    }
-    catch (err) {
-      console.log(err)
-      navigate("/signin")
-    }
-  }
   useEffect(() => {
-    calluserpage()
-  }, []);
-
+       axios.get("http://localhost:8484/userpanel")
+      .then(res=>{
+        setUserData(res.data.user)})
+       
+      .catch(err=>console.log(err))
+    },[]);
+console.log(userdata[0].Username);
   return (
     <>
 
@@ -39,9 +28,9 @@ function Userpanel() {
               <div className="card border-0 " >
                 <img src={Account} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h4 className="card-title">{userdata.Username}</h4>
+                  <h4 className="card-title">{userdata[0].Username}</h4>
                   <p className="card-text">Always Ready To Code</p>
-                  <a href="#" className="btn btn-outline-light mb-3">Edit Profile</a>
+                  <a href="/" className="btn btn-outline-light mb-3">Edit Profile</a>
 
 
                 </div>
@@ -88,9 +77,9 @@ function Userpanel() {
                           </thead>
                           <tbody>
                             <tr>
-                              <td> {userdata.Username}</td>
-                              <td> {userdata.Email}</td>
-                              <td>  {userdata.Phone_number}</td>
+                              <td> {userdata[0].Username}</td>
+                              <td> {userdata[0].Email}</td>
+                              <td>  {userdata[0].Phone_number}</td>
                             </tr>
                           </tbody>
                         </table>
@@ -110,7 +99,7 @@ function Userpanel() {
                   <div className="tab-pane fade" id="cc">
                     <div className="row">
                       <div className="p-4">
-                        <h1>{userdata.message}</h1>
+                        {/* <h1>{userdata.message}</h1> */}
                       </div>
 
                     </div>

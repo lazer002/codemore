@@ -4,9 +4,41 @@ const router = express.Router();
 let User = require('../model/signupschema');
 let News = require('../model/news');
 const bcrypt = require("bcrypt")
-const Authentication = require("../middelware/authentication")
 const jwt = require("jsonwebtoken")
+const cookie = require('cookie-parser');
+ const Authentication = require("../middelware/authentication")
 
+      
+router.post('/signin', async (req, res) => {
+    // console.log(req.body);
+
+    const { Email, Password } = req.body.user;
+    if (!Email || !Password) {
+        return res.status(422).json({ message: 'Please enter valid password and email' });
+    }
+    try {
+        const user = await User.findOne({ Email: Email });
+
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+        const isMatch = await bcrypt.compare(Password, user.Password);
+        
+        if (!isMatch) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }else{
+            const token = jwt.sign({ Email: user.Email }, process.env.Secret_key,{expiresIn:'1d'});
+            res.cookie('token',token);
+        
+            return res.json("Success");
+        }
+        
+} catch (err) {
+        console.error(err.message);
+        return res.status(500).send('Server Error');
+    }
+});
+ 
 
 
 
@@ -89,36 +121,6 @@ router.post('/signup', async (req, res) => {
 
 
 
-router.post('/signin', async (req, res) => {
-    // console.log(req.body);
-
-    const { Email, Password } = req.body.user;
-    if (!Email || !Password) {
-        return res.status(422).json({ message: 'Please enter valid password and email' });
-    }
-    try {
-        const user = await User.findOne({ Email: Email });
-
-        if (!user) {
-            return res.status(401).json({ error: 'Invalid credentials' });
-        }
-        const isMatch = await bcrypt.compare(Password, user.Password);
-        
-        if (!isMatch) {
-            return res.status(401).json({ error: 'Invalid credentials' });
-        }else{
-            const token = jwt.sign({ _id: this._id }, process.env.Secret_key);
-
-            res.cookie('jwtoken', token, { maxAge: 600000, httpOnly: true });
-            console.log(req.session,'o');
-            return res.json({ token, user: { _id: user._id, Email: user.Email } });
-        }
-        
-} catch (err) {
-        console.error(err.message);
-        return res.status(500).send('Server Error');
-    }
-});
 
 
 
@@ -143,13 +145,15 @@ router.post('/signin', async (req, res) => {
 
 
 
-router.get("/userpanel",Authentication, (req, res) => {
-
-    res.send(req.rootUser)
+router.get("/userpanel",Authentication,async (req, res) => {
+    const user = await User.find({})
+    console.log(user);
+    res.json({user:user})
+   
 })
 
 router.get("/contect", Authentication, (req, res) => {
-    res.send(req.rootUser);
+ 
 })
 
 

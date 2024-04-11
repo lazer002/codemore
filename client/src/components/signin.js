@@ -7,18 +7,18 @@ import sqls from "./images/7s.png";
 import cplus from "./images/1.png";
 import axios from 'axios'
 
-import { useCookies } from "react-cookie";
 
 function Signin() {
-
+  
+axios.defaults.withCredentials=true
 const navigate = useNavigate()
-const [cookies, setCookie] = useCookies([""]);
+
 const [user,setUser]=useState({
     Email:'',Password:''
 })
 let name,value;
 const handleInput=(e)=>{
-    console.log(e)
+
     name=e.target.name
     value=e.target.value
     setUser({...user,[name]:value})
@@ -30,16 +30,9 @@ const postdata=async(e)=>{
 
     const res=await axios.post("http://localhost:8484/signin",{user})
 if(res.status === 200){
-  console.log(cookies.jwtoken,'cookies.jwtoken.token');
-  localStorage.setItem("jwtoken", res.data.token)
-  localStorage.setItem("data", JSON.stringify(res.data.user))
-  console.log(res.data,'res.data');
-  setCookie("jwtoken",res.data.token, {
-    path: "/"
-  });
+
   navigate("/Userpanel")
-// window.alert("invalid register" )                      
-// console.log("invalid register")   
+ 
 }else{
   console.log('jfwjafiojwajfiwajfijwa');
 }

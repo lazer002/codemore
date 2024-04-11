@@ -72,15 +72,15 @@ signup_schema.pre('save',async function (next) {
 
 
   
-signup_schema.methods.addMessage = async function(Username,Email,Phone_number,subject,message){
-    try{
-this.messages=this.messages.concat({Username,Email,Phone_number,subject,message})
-await this.save()
-return this.messages
-    }
-    catch(err){
-    console.log(er)}
-}
+// signup_schema.methods.addMessage = async function(Username,Email,Phone_number,subject,message){
+//     try{
+// this.messages=this.messages.concat({Username,Email,Phone_number,subject,message})
+// await this.save()
+// return this.messages
+//     }
+//     catch(err){
+//     console.log(er)}
+// }
 
 
 

@@ -14,7 +14,7 @@ const session = require('express-session');
 require('./db/config')
 app.use(express.json());
 app.use(bodyparser.urlencoded({extended:true}))
-
+app.use(cookie())
 app.use(session({
 
     secret: process.env.Secret_key,
@@ -23,17 +23,8 @@ app.use(session({
     cookie:{
         maxAge:600000
     }
-}));
-// sessionStorage.setItem('jwtToken', jwtToken);
+}))
 
-
-var sessionChecker = (req, res, next) => {
-    if (req.cookie.user_sid && req.session.user) {
-        res.redirect('/index')
-    } else {
-        next();
-    }
-}
 
 
 app.use('/',router)

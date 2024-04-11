@@ -19,71 +19,71 @@ import cpluss from "./images/1s.png";
 
 function Contect(){
   const navigate = useNavigate();
-  const [userData,setUserData]=useState({Username:'',Email:'',Phone_number:'',subject:'',message:'',
-});
-  const contectdata = async() => {
-      try{
+//   const [userData,setUserData]=useState({Username:'',Email:'',Phone_number:'',subject:'',message:'',
+// });
+//   const contectdata = async() => {
+//       try{
           
-      const res=await  fetch('/contect',{
-          method:"GET",
-          headers:{
-              Accept:"application/json",
-              "Content-Type":"application/json"
-          },
-          credentials:"include"
-      });
-      const data=await res.json();
-      console.log(data);
-      setUserData(data);
-      if(!res.status===200)
-      {
-        const error=new Error(res.error);
-        throw error;
-      }
-  }catch(err){
-  console.log(err);
-  navigate('/signin')
-  } 
-  }
+//       const res=await  fetch('/contect',{
+//           method:"GET",
+//           headers:{
+//               Accept:"application/json",
+//               "Content-Type":"application/json"
+//           },
+//           credentials:"include"
+//       });
+//       const data=await res.json();
+//       console.log(data);
+//       setUserData(data);
+//       if(!res.status===200)
+//       {
+//         const error=new Error(res.error);
+//         throw error;
+//       }
+//   }catch(err){
+//   console.log(err);
+//   navigate('/signin')
+//   } 
+//   }
   
-  useEffect(()=>
-  {
-    contectdata();
-  },
-  []);
+//   useEffect(()=>
+//   {
+//     contectdata();
+//   },
+//   []);
   
  
-let name,value;
-const handleInput=(e)=>{
-    console.log(e)
-    name=e.target.name;
-    value=e.target.value;
-    setUserData({...userData,[name]:value})
-} 
+// let name,value;
+// const handleInput=(e)=>{
+//     console.log(e)
+//     name=e.target.name;
+//     value=e.target.value;
+//     setUserData({...userData,[name]:value})
+// } 
 
-const contactform=async(e)=>{
-    e.preventDefault()
-    const {Username,Email,Phone_number,subject,message}=userData
+// const contactform=async(e)=>{
+//     e.preventDefault()
+//     const {Username,Email,Phone_number,subject,message}=userData
 
-    const res=await fetch("/contect",{
-method:"post",
-headers:{
+//     const res=await fetch("/contect",{
+// method:"post",
+// headers:{
 
-    "content-type":"application/json" 
-},
-body:JSON.stringify({
-    Username,Email,Phone_number,subject,message})
+//     "content-type":"application/json" 
+// },
+// body:JSON.stringify({
+//     Username,Email,Phone_number,subject,message})
 
-    });
+//     });
 
-const data=await res.json()
-if(!data){
-console.log("message not send") 
+// const data=await res.json()
+// if(!data){
+// console.log("message not send") 
 
-}
-else{window.alert("message send")
-setUserData({...userData,message:""})
-}}
+// }
+// else{window.alert("message send")
+// setUserData({...userData,message:""})
+// }}
 
 
 
@@ -313,14 +313,14 @@ return(
                           name="Username"
                           className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
                           placeholder="Name"
-                          value={ userData.Username } onChange={handleInput} autoCorrect="off"
+                         autoCorrect="off"
                         />
                         <input
                           type="text"
                           name="Email"
                           className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
                           placeholder="Email"
-                          value={ userData.Email } onChange={handleInput} autoCorrect="off"
+                        autoCorrect="off"
 
                         />
                         <input
@@ -328,7 +328,7 @@ return(
                           name="Phone_number"
                           className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
                           placeholder="tel"
-                          value={ userData.Phone_number } onChange={handleInput} autoCorrect="off"
+                        autoCorrect="off"
 
                         />
                       </div>
@@ -338,7 +338,7 @@ return(
                           name="subject"
                           className="  py-4 rounded-4 w-100 bg text-light h5"
                           placeholder="Subject"
-                          value={ userData.subject } onChange={handleInput} autoCorrect="off"
+                         autoCorrect="off"
 
                         />
                       </div>
@@ -348,13 +348,13 @@ return(
                           name="message"
                           className="  py-5 rounded-4 w-100 bg text-light h5"
                           placeholder="Leave us a message..."
-                          value={ userData.message } onChange={handleInput} autoCorrect="off"
+                          autoCorrect="off"
 
                         />
                       </div>
                       <div className=" p-3">
                         {/* <button className="btn bg w-100 py-3 rounded-4  text-light h5" type="submit" name="submit">Sumbit Query</button> */}
-                        <input type="submit" className=" bg w-100 py-3 rounded-4  text-light h5" onClick={contactform} name="submit"/>
+                        <input type="submit" className=" bg w-100 py-3 rounded-4  text-light h5"  name="submit"/>
                       </div>
                     </form>
                   </div>

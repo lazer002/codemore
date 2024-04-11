@@ -1,7 +1,11 @@
+ 
+*{color: white;}
+
 
 body{background-image: url(./components/images/footer.png);
 background-size: cover; 
 border-radius: 120px;
+color: white;
 }
 
 .shadow{box-shadow: rgba(5, 5, 5, 0.494) 0px 154px 155px, rgba(10, 10, 10, 0.12) 0px -12px 30px, rgba(10, 10, 10, 10.12) 0px 4px 6px, rgba(10, 10, 10, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -53px 55px;

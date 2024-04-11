@@ -1,5 +1,5 @@
-import React,{useState,useEffect} from "react"
-import { useNavigate } from "react-router-dom";
+import React from "react"
+// import { useNavigate } from "react-router-dom";
 import "../index.css";
 
 import banner1 from "./images/a.png";
@@ -14,8 +14,6 @@ import go from "./images/go.png";
 import info from "./images/info.png";
 import swiggy from "./images/swiggy.png";
 import logi from "./images/logi.png";
-import meeting from "./images/meeting.png";
-import service from "./images/service.png";
 
 import cplus from "./images/1.png";
 import digital from "./images/2.png";
@@ -36,7 +34,6 @@ import digitals from "./images/2s.png";
 import cs from "./images/3s.png";
 import pythons from "./images/4s.png";
 import webs from "./images/5s.png";
-import angulars from "./images/6s.png";
 import sqls from "./images/7s.png";
 import htmls from "./images/8s.png";
 import javas from "./images/9s.png";
@@ -47,72 +44,8 @@ import androids from "./images/13s.png";
 
 
 function Home() {
-  const navigate = useNavigate();
-  const [userData,setUserData]=useState({Username:'',Email:'',Phone_number:'',subject:'',message:'',
-});
-  const contectdata = async() => {
-      try{
-          
-      const res=await  fetch('/contect',{
-          method:"GET",
-          headers:{
-              Accept:"application/json",
-              "Content-Type":"application/json"
-          },
-          credentials:"include"
-      });
-      const data=await res.json();
-      console.log(data);
-      setUserData(data);
-      if(!res.status===200)
-      {
-        const error=new Error(res.error);
-        throw error;
-      }
-  }catch(err){
-  console.log(err);
-  navigate('/signin')
-  } 
-  }
-  
-  useEffect(()=>
-  {
-    contectdata();
-  },
-  []);
-  
+  // const navigate = useNavigate();
  
-let name,value;
-const handleInput=(e)=>{
-    console.log(e)
-    name=e.target.name;
-    value=e.target.value;
-    setUserData({...userData,[name]:value})
-} 
-
-const contactform=async(e)=>{
-    e.preventDefault()
-    const {Username,Email,Phone_number,subject,message}=userData
-
-    const res=await fetch("/contect",{
-method:"post",
-headers:{
-
-    "content-type":"application/json" 
-},
-body:JSON.stringify({
-    Username,Email,Phone_number,subject,message})
-
-    });
-
-const data=await res.json()
-if(!data){
-console.log("message not send") 
-
-}
-else{window.alert("message send")
-setUserData({...userData,message:""})
-}}
 
 let items = document.querySelectorAll(".alla");
 
@@ -140,7 +73,7 @@ items.forEach((el) => {
         <div className="row ">
           <div className="col-md-6 p-3">
             <div className="info1 icon1 p-5">
-              <img src={htmls} className="img-fluid" />
+              <img src={htmls} className="img-fluid"  alt="Icon"/>
             </div>
 
             <div className="display-3 fw-semi-bold py-2">Code+</div>
@@ -148,7 +81,7 @@ items.forEach((el) => {
               Best Courses are waiting to enrich your skill
             </div>
             <div className=" info1 icon2 p-5">
-              <img src={javas} className="img-fluid" />
+              <img src={javas} className="img-fluid"alt="Icon" />
             </div>
 
             <div className="fw-semi-bold py-2 fs-4">
@@ -156,11 +89,11 @@ items.forEach((el) => {
               skills needed to excel in the world of programming.
             </div>
             <div className=" info1 icon1 p-5">
-              <img src={c} className="img-fluid" />
+              <img src={c} className="img-fluid" alt="Icon"/>
             </div>
            
             <div className=" info1 icon5 p-5">
-              <img src={html} className="img-fluid" />
+              <img src={html} className="img-fluid" alt="Icon"/>
             </div>
          
           </div>
@@ -173,7 +106,7 @@ items.forEach((el) => {
               data-bs-ride="carousel"
             >
                 <div className="info1 icon4 p-5">
-              <img src={html} className="img-fluid" />
+              <img src={html} className="img-fluid" alt="Icon"/>
             </div>
               <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="4000">
@@ -206,7 +139,7 @@ items.forEach((el) => {
                 </div>
               </div>
               <div className=" info1 icon3 p-5">
-              <img src={androids} className="img-fluid" />
+              <img src={androids} className="img-fluid" alt="Icon" />
             </div>
             </div>
           </div>
@@ -218,7 +151,7 @@ items.forEach((el) => {
         <div className="container-fluid">
           <div className="row">
           <div className=" info1 icon3 p-5">
-              <img src={bootstraps} className="img-fluid" />
+              <img src={bootstraps} className="img-fluid" alt="Icon"/>
             </div>
             <div className="col-8">
               
@@ -236,7 +169,7 @@ items.forEach((el) => {
             </div>
             <div className="col-2">   
             <div className="  info1 p-5">
-              <img src={html} className="img-fluid" />
+              <img src={html} className="img-fluid" alt="Icon"/>
             </div></div>
             
             <div className="col-12 contect_form">
@@ -610,7 +543,7 @@ items.forEach((el) => {
        
           <div className="row  justify-content-center">
           <div className=" info1 icon3 p-5">
-              <img src={bootstraps} className="img-fluid" />
+              <img src={bootstraps} className="img-fluid" alt="Icon"/>
             </div>
             <div className="col-lg-6">
               <div className="display-4 fw-semi-bolder pb-4">
@@ -632,7 +565,7 @@ items.forEach((el) => {
                 <div className="col-4 amazone ">
                   <img src={ama} alt="amazone" className="img-fluid shadow hover" />
                   <div className=" info1 icon4 p-5">
-              <img src={android} className="img-fluid " />
+              <img src={android} className="img-fluid " alt="Icon"/>
             </div>
                 </div>
 
@@ -665,7 +598,7 @@ items.forEach((el) => {
                 <div className="col-4 brand_w my-3 p-3 shadow">
                   <h5 className="ms-3 hover">+ many more</h5>
                   <div className=" info1 icon1 p-5">
-              <img src={cplus} className="img-fluid" />
+              <img src={cplus} className="img-fluid" alt="Icon"/>
             </div>
                 </div>
               </div>
@@ -755,29 +688,29 @@ items.forEach((el) => {
             <div className="col-lg-6 p-5">
          
             <div className=" info1 icon4 p-5">
-              <img src={pythons} className="img-fluid" />
+              <img src={pythons} className="img-fluid" alt="Icon"/>
             </div>
             <div className=" info1 icon3 p-5">
-              <img src={android} className="img-fluid" />
+              <img src={android} className="img-fluid" alt="Icon"/>
             </div>
          
            
             <div className=" info1 icon1 p-5">
-              <img src={phps} className="img-fluid" />
+              <img src={phps} className="img-fluid" alt="Icon"/>
             </div>
           
           </div>  
            <div className=" info1 icon1 p-5">
-              <img src={cs} className="img-fluid" />
+              <img src={cs} className="img-fluid" alt="Icon"/>
             </div>
             <div className=" info1 icon2 p-5">
-              <img src={jquerys} className="img-fluid" />
+              <img src={jquerys} className="img-fluid" alt="Icon"/>
             </div>
             <div className=" info1 icon6 p-5">
-              <img src={cpluss} className="img-fluid" />
+              <img src={cpluss} className="img-fluid" alt="Icon"/>
             </div>
             <div className=" info1 icon7 p-5">
-              <img src={sqls} className="img-fluid" />
+              <img src={sqls} className="img-fluid" alt="Icon"/>
             </div>
            
         </div>
@@ -796,7 +729,7 @@ items.forEach((el) => {
               industry!
             </div>
             <div className=" info1 icon1 p-5">
-              <img src={sqls} className="img-fluid" />
+              <img src={sqls} className="img-fluid" alt="Icon"/>
             </div>
             <div className="py-2">
               Our classes are taught by industry experts who have real-world
@@ -810,12 +743,12 @@ items.forEach((el) => {
               Enroll Now
             </button>
             <div className=" info1 icon2 p-5">
-              <img src={androids} className="img-fluid" />
+              <img src={androids} className="img-fluid" alt="Icon"/>
             </div>
           </div>
           <div className="col-md-6 p-5  order-1">
           <div className=" info1 icon6 p-5">
-              <img src={cpluss} className="img-fluid" />
+              <img src={cpluss} className="img-fluid" alt="Icon"/>
             </div>
             <div
               id="carouselExampleRide"
@@ -823,7 +756,7 @@ items.forEach((el) => {
               data-bs-ride="carousel"
             >
                 <div className=" info1 icon7 p-5">
-              <img src={pythons} className="img-fluid" />
+              <img src={pythons} className="img-fluid" alt="Icon"/>
             </div>
               <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="4000">
@@ -878,25 +811,25 @@ items.forEach((el) => {
               <div className="row justify-content-end">
                 <div className="col-sm-4">   
                 <div className="info1 icon1 p-5">
-              <img src={web} className="img-fluid" />
+              <img src={web} className="img-fluid" alt="Icon"/>
             </div>
             
             <div className=" info1 icon1 p-5">
-              <img src={phps} className="img-fluid" />
+              <img src={phps} className="img-fluid" alt="Icon"/>
             </div>
           
         
            <div className=" info1 icon2 p-5">
-              <img src={cs} className="img-fluid" />
+              <img src={cs} className="img-fluid" alt="Icon"/>
             </div>
             <div className=" info1 icon3 p-5">
-              <img src={jquerys} className="img-fluid" />
+              <img src={jquerys} className="img-fluid" alt="Icon"/>
             </div>
             <div className=" info1 icon4 p-5">
-              <img src={cpluss} className="img-fluid" />
+              <img src={cpluss} className="img-fluid" alt="Icon"/>
             </div>
             <div className=" info1 icon6 p-5">
-              <img src={sqls} className="img-fluid" />
+              <img src={sqls} className="img-fluid" alt="Icon"/>
             </div>
 
 
@@ -914,14 +847,14 @@ items.forEach((el) => {
                           name="Username"
                           className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
                           placeholder="Name"
-                          value={ userData.Username } onChange={handleInput} autoCorrect="off"
+                          autoCorrect="off"
                         />
                         <input
                           type="text"
                           name="Email"
                           className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
                           placeholder="Email"
-                          value={ userData.Email } onChange={handleInput} autoCorrect="off"
+                         autoCorrect="off"
 
                         />
                         <input
@@ -929,7 +862,7 @@ items.forEach((el) => {
                           name="Phone_number"
                           className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
                           placeholder="tel"
-                          value={ userData.Phone_number } onChange={handleInput} autoCorrect="off"
+                         autoCorrect="off"
 
                         />
                       </div>
@@ -939,7 +872,7 @@ items.forEach((el) => {
                           name="subject"
                           className="  py-4 rounded-4 w-100 bg text-light h5"
                           placeholder="Subject"
-                          value={ userData.subject } onChange={handleInput} autoCorrect="off"
+                          autoCorrect="off"
 
                         />
                       </div>
@@ -949,13 +882,13 @@ items.forEach((el) => {
                           name="message"
                           className="  py-5 rounded-4 w-100 bg text-light h5"
                           placeholder="Leave us a message..."
-                          value={ userData.message } onChange={handleInput} autoCorrect="off"
+                       autoCorrect="off"
 
                         />
                       </div>
                       <div className=" p-3">
                         {/* <button className="btn bg w-100 py-3 rounded-4  text-light h5" type="submit" name="submit">Sumbit Query</button> */}
-                        <input type="submit" className=" bg w-100 py-3 rounded-4  text-light h5" onClick={contactform} name="submit"/>
+                        <input type="submit" className=" bg w-100 py-3 rounded-4  text-light h5"  name="submit"/>
                       </div>
                     </form>
                   </div>

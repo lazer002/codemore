@@ -1,8 +1,15 @@
  
-*{color: white;}
+*{color: rgb(255, 255, 255);
 
 
-body{background-image: url(./components/images/footer.png);
+}
+
+
+body{
+  overflow-x: hidden;
+position: relative;
+  background: #2d1151 !important;
+  background: radial-gradient(circle, rgba(37, 2, 58, 0.863) 0%, rgb(134, 5, 255) 100%),url('./components/images/footer.png') !important;
 background-size: cover; 
 border-radius: 120px;
 color: white;
@@ -39,7 +46,7 @@ color: white;}
 @media screen and (max-width:575px) {.navbars{
     background-color:rgb(56, 6, 103) ;
 }}
-.bg{background-color:rgb(39, 1, 74) ;
+.bg{background-color:rgb(81 6 151) ;
   outline: 0px solid rgb(44, 2, 69);
   color: white;
 }
@@ -127,7 +134,7 @@ border-radius: 20px;
 .banner_animation{position: relative;
 width:50vw;}
 .icon1{position: absolute;
-left: 10%;}
+left: 7%;}
 .icon2{position: absolute;
 text-align: end;
   right: 20%;
@@ -196,10 +203,11 @@ text-align: end;
   
   @media only screen and (max-width: 350px ) {
       .con{font-size: small;}
-        
+       
 }
 @media only screen and (max-width: 768px ) {
   .contect_us{height:100vh}
+  .form_main{margin-top: 300px;}
 }
 
 .shadow:hover{background-color: rgb(77, 9, 122);
@@ -298,3 +306,7 @@ background-size: contain;
 
   }
   .contect_body{position: relative;}
+  .card{background-color: #2d1151 !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px !important;
+  }

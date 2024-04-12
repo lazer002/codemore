@@ -45,23 +45,6 @@ import androids from "./images/13s.png";
 
 function Home() {
   // const navigate = useNavigate();
- 
-
-let items = document.querySelectorAll(".alla");
-
-items.forEach((el) => {
-  const minPerSlide = 5;
-  let next = el.nextElementSibling;
-  for (var i = 1; i < minPerSlide; i++) {
-    if (!next) {
-      // wrap carousel by using first child
-      next = items[0];
-    }
-    let cloneChild = next.cloneNode(true);
-    el.appendChild(cloneChild.children[0]);
-    next = next.nextElementSibling;
-  }
-});
 
 
 
@@ -73,7 +56,7 @@ items.forEach((el) => {
         <div className="row ">
           <div className="col-md-6 p-3">
             <div className="info1 icon1 p-5">
-              <img src={htmls} className="img-fluid"  alt="Icon"/>
+              <img src={htmls} className="img-fluid" alt="Icon" />
             </div>
 
             <div className="display-3 fw-semi-bold py-2">Code+</div>
@@ -81,7 +64,7 @@ items.forEach((el) => {
               Best Courses are waiting to enrich your skill
             </div>
             <div className=" info1 icon2 p-5">
-              <img src={javas} className="img-fluid"alt="Icon" />
+              <img src={javas} className="img-fluid" alt="Icon" />
             </div>
 
             <div className="fw-semi-bold py-2 fs-4">
@@ -89,25 +72,25 @@ items.forEach((el) => {
               skills needed to excel in the world of programming.
             </div>
             <div className=" info1 icon1 p-5">
-              <img src={c} className="img-fluid" alt="Icon"/>
+              <img src={c} className="img-fluid" alt="Icon" />
             </div>
-           
+
             <div className=" info1 icon5 p-5">
-              <img src={html} className="img-fluid" alt="Icon"/>
+              <img src={html} className="img-fluid" alt="Icon" />
             </div>
-         
+
           </div>
           <div className="col-md-6 p-5">
-        
-           
+
+
             <div
               id="carouselExampleRide"
               className="carousel-fade"
               data-bs-ride="carousel"
             >
-                <div className="info1 icon4 p-5">
-              <img src={html} className="img-fluid" alt="Icon"/>
-            </div>
+              <div className="info1 icon4 p-5">
+                <img src={html} className="img-fluid" alt="Icon" />
+              </div>
               <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="4000">
                   <img
@@ -139,24 +122,24 @@ items.forEach((el) => {
                 </div>
               </div>
               <div className=" info1 icon3 p-5">
-              <img src={androids} className="img-fluid" alt="Icon" />
-            </div>
+                <img src={androids} className="img-fluid" alt="Icon" />
+              </div>
             </div>
           </div>
-          
+
         </div>
       </div>
 
       <div className="container px-5 backround mb-5 hover">
         <div className="container-fluid">
           <div className="row">
-          <div className=" info1 icon3 p-5">
-              <img src={bootstraps} className="img-fluid" alt="Icon"/>
+            <div className=" info1 icon3 p-5">
+              <img src={bootstraps} className="img-fluid" alt="Icon" />
             </div>
             <div className="col-8">
-              
+
               <div className="contect_body">
-                
+
                 <div className="display-6 fw-semi-bold py-2">
                   start your journey towards a successful <br /> career in the
                   tech industry!
@@ -167,11 +150,11 @@ items.forEach((el) => {
                 </button>
               </div>
             </div>
-            <div className="col-2">   
-            <div className="  info1 p-5">
-              <img src={html} className="img-fluid" alt="Icon"/>
-            </div></div>
-            
+            <div className="col-2">
+              <div className="  info1 p-5">
+                <img src={html} className="img-fluid" alt="Icon" />
+              </div></div>
+
             <div className="col-12 contect_form">
               <div className="row justify-content-center">
                 <div className="col-xl-10 col-lg-8 col-sm-10 col-12 ">
@@ -179,12 +162,12 @@ items.forEach((el) => {
                     <div className="row">
                       <div
                         id="recipeCarousel"
-                        className="carousel slide ala "
+                        className="carousel"
                         data-bs-ride="carousel"
                       >
                         <div className="carousel-inner" role="listbox">
                           <div
-                            className="carousel-item active alla"
+                            className="carousel-item active slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3">
@@ -208,7 +191,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -234,7 +217,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -258,7 +241,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -284,7 +267,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -310,7 +293,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -334,7 +317,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -358,7 +341,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -382,7 +365,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -406,7 +389,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -430,7 +413,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -454,7 +437,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -478,7 +461,7 @@ items.forEach((el) => {
                             </div>
                           </div>
                           <div
-                            className="carousel-item alla"
+                            className="carousel-item slide"
                             data-bs-interval="2000"
                           >
                             <div className="col-md-3 ">
@@ -533,17 +516,17 @@ items.forEach((el) => {
               </div>
             </div>
           </div>
-          
+
         </div>
       </div>
 
       <div className="container-fluid backround py-5 hover">
-        
+
         <div className="container">
-       
+
           <div className="row  justify-content-center">
-          <div className=" info1 icon3 p-5">
-              <img src={bootstraps} className="img-fluid" alt="Icon"/>
+            <div className=" info1 icon3 p-5">
+              <img src={bootstraps} className="img-fluid" alt="Icon" />
             </div>
             <div className="col-lg-6">
               <div className="display-4 fw-semi-bolder pb-4">
@@ -565,8 +548,8 @@ items.forEach((el) => {
                 <div className="col-4 amazone ">
                   <img src={ama} alt="amazone" className="img-fluid shadow hover" />
                   <div className=" info1 icon4 p-5">
-              <img src={android} className="img-fluid " alt="Icon"/>
-            </div>
+                    <img src={android} className="img-fluid " alt="Icon" />
+                  </div>
                 </div>
 
                 <div className="col-4 brand_w">
@@ -580,7 +563,7 @@ items.forEach((el) => {
 
                 <div className="col-4 brand_w">
                   <img src={go} alt="amazone" className=" img-fluid shadow hover" />
-             
+
                   <img src={info} alt="amazone" className=" img-fluid mx-5 shadow hover" />
                 </div>
               </div>
@@ -598,16 +581,16 @@ items.forEach((el) => {
                 <div className="col-4 brand_w my-3 p-3 shadow">
                   <h5 className="ms-3 hover">+ many more</h5>
                   <div className=" info1 icon1 p-5">
-              <img src={cplus} className="img-fluid" alt="Icon"/>
-            </div>
+                    <img src={cplus} className="img-fluid" alt="Icon" />
+                  </div>
                 </div>
               </div>
-            
+
             </div>
-         
-          </div> 
+
+          </div>
         </div>
-        
+
       </div>
 
       <div className="container backround my-5 hover ">
@@ -626,12 +609,12 @@ items.forEach((el) => {
                   <li>functional and offers a good user experience</li>
                   <li>User experience is central to the web designing process</li>
                   <li> various techniques, tools and programming languages</li>
-                
+
                 </ul>
               </div>
             </div>
           </div>
-      
+
           <div className="col-lg-4  p-5 ">
             <div className="card bg text-light">
               <div className="card-body text-center">
@@ -684,44 +667,44 @@ items.forEach((el) => {
                 Enroll Now
               </button>
             </div>
-            
+
             <div className="col-lg-6 p-5">
-         
-            <div className=" info1 icon4 p-5">
-              <img src={pythons} className="img-fluid" alt="Icon"/>
+
+              <div className=" info1 icon4 p-5">
+                <img src={pythons} className="img-fluid" alt="Icon" />
+              </div>
+              <div className=" info1 icon3 p-5">
+                <img src={android} className="img-fluid" alt="Icon" />
+              </div>
+
+
+              <div className=" info1 icon1 p-5">
+                <img src={phps} className="img-fluid" alt="Icon" />
+              </div>
+
             </div>
-            <div className=" info1 icon3 p-5">
-              <img src={android} className="img-fluid" alt="Icon"/>
-            </div>
-         
-           
             <div className=" info1 icon1 p-5">
-              <img src={phps} className="img-fluid" alt="Icon"/>
-            </div>
-          
-          </div>  
-           <div className=" info1 icon1 p-5">
-              <img src={cs} className="img-fluid" alt="Icon"/>
+              <img src={cs} className="img-fluid" alt="Icon" />
             </div>
             <div className=" info1 icon2 p-5">
-              <img src={jquerys} className="img-fluid" alt="Icon"/>
+              <img src={jquerys} className="img-fluid" alt="Icon" />
             </div>
             <div className=" info1 icon6 p-5">
-              <img src={cpluss} className="img-fluid" alt="Icon"/>
+              <img src={cpluss} className="img-fluid" alt="Icon" />
             </div>
             <div className=" info1 icon7 p-5">
-              <img src={sqls} className="img-fluid" alt="Icon"/>
+              <img src={sqls} className="img-fluid" alt="Icon" />
             </div>
-           
-        </div>
+
+          </div>
         </div>
       </div>
 
-   
+
       <div className="container backround my-5 hover">
         {/* <video preload loop autoPlay src={V} type="video/mp4"  className='img-fluid'/> */}
         <div className="row">
-   
+
           <div className="col-md-6 p-3 order-2">
             <div className="h2 fw-semi-bold py-2">We are a Coding Academy</div>
             <div className="display-6  fw-semi-bold py-2">
@@ -729,7 +712,7 @@ items.forEach((el) => {
               industry!
             </div>
             <div className=" info1 icon1 p-5">
-              <img src={sqls} className="img-fluid" alt="Icon"/>
+              <img src={sqls} className="img-fluid" alt="Icon" />
             </div>
             <div className="py-2">
               Our classes are taught by industry experts who have real-world
@@ -743,21 +726,21 @@ items.forEach((el) => {
               Enroll Now
             </button>
             <div className=" info1 icon2 p-5">
-              <img src={androids} className="img-fluid" alt="Icon"/>
+              <img src={androids} className="img-fluid" alt="Icon" />
             </div>
           </div>
           <div className="col-md-6 p-5  order-1">
-          <div className=" info1 icon6 p-5">
-              <img src={cpluss} className="img-fluid" alt="Icon"/>
+            <div className=" info1 icon6 p-5">
+              <img src={cpluss} className="img-fluid" alt="Icon" />
             </div>
             <div
               id="carouselExampleRide"
               className="carousel-fade"
               data-bs-ride="carousel"
             >
-                <div className=" info1 icon7 p-5">
-              <img src={pythons} className="img-fluid" alt="Icon"/>
-            </div>
+              <div className=" info1 icon7 p-5">
+                <img src={pythons} className="img-fluid" alt="Icon" />
+              </div>
               <div className="carousel-inner">
                 <div className="carousel-item active" data-bs-interval="4000">
                   <img src={banner1} className="d-block w-100" alt="bannerfw" />
@@ -791,119 +774,119 @@ items.forEach((el) => {
 
 
       <div className="container-fluid">
-        
+
         <div className="container position-relative">
-          
+
           <div className="row">
-            
+
             <div className="col-12 mt-5">
-          
-                <div className="display-4 fw-semi-bold">
-                  start your journey towards a successful <br /> career in the
-                  tech industry!
-                </div>
-               
-                <button className="btn btn-outline-dark px-5 my-3 text-light hover">Enroll Now</button>
+
+              <div className="display-4 fw-semi-bold">
+                start your journey towards a successful <br /> career in the
+                tech industry!
               </div>
-              
+
+              <button className="btn btn-outline-dark px-5 my-3 text-light hover">Enroll Now</button>
             </div>
-            <div className="col-12 contect_form">
-              <div className="row justify-content-end">
-                <div className="col-sm-4">   
+
+          </div>
+          <div className="col-12 contect_form">
+            <div className="row justify-content-end">
+              <div className="col-xl-7  col-lg-6 ">
                 <div className="info1 icon1 p-5">
-              <img src={web} className="img-fluid" alt="Icon"/>
-            </div>
-            
-            <div className=" info1 icon1 p-5">
-              <img src={phps} className="img-fluid" alt="Icon"/>
-            </div>
-          
-        
-           <div className=" info1 icon2 p-5">
-              <img src={cs} className="img-fluid" alt="Icon"/>
-            </div>
-            <div className=" info1 icon3 p-5">
-              <img src={jquerys} className="img-fluid" alt="Icon"/>
-            </div>
-            <div className=" info1 icon4 p-5">
-              <img src={cpluss} className="img-fluid" alt="Icon"/>
-            </div>
-            <div className=" info1 icon6 p-5">
-              <img src={sqls} className="img-fluid" alt="Icon"/>
-            </div>
-
-
-
-
-            </div>
-                <div className="col-xl-5 col-lg-6 col-sm-8 col-12">
-                  <div className="form_main border rounded-4 p-4 hover">
-                    <h1 className="">Get in Touch</h1>
-                    <p>We Want To Hear From You</p>
-                    <form method="post" >
-                      <div className=" d-flex justify-content-between">
-                        <input
-                          type="text"
-                          name="Username"
-                          className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
-                          placeholder="Name"
-                          autoCorrect="off"
-                        />
-                        <input
-                          type="text"
-                          name="Email"
-                          className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
-                          placeholder="Email"
-                         autoCorrect="off"
-
-                        />
-                        <input
-                          type="text"
-                          name="Phone_number"
-                          className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
-                          placeholder="tel"
-                         autoCorrect="off"
-
-                        />
-                      </div>
-                      <div className=" p-3">
-                        <input
-                          type="text"
-                          name="subject"
-                          className="  py-4 rounded-4 w-100 bg text-light h5"
-                          placeholder="Subject"
-                          autoCorrect="off"
-
-                        />
-                      </div>
-                      <div className=" p-3">
-                        <input
-                          type="text"
-                          name="message"
-                          className="  py-5 rounded-4 w-100 bg text-light h5"
-                          placeholder="Leave us a message..."
-                       autoCorrect="off"
-
-                        />
-                      </div>
-                      <div className=" p-3">
-                        {/* <button className="btn bg w-100 py-3 rounded-4  text-light h5" type="submit" name="submit">Sumbit Query</button> */}
-                        <input type="submit" className=" bg w-100 py-3 rounded-4  text-light h5"  name="submit"/>
-                      </div>
-                    </form>
-                  </div>
+                  <img src={web} className="img-fluid" alt="Icon" />
                 </div>
-        
-          
-         
-           
-        
+
+                <div className=" info1 icon1 p-5">
+                  <img src={phps} className="img-fluid" alt="Icon" />
+                </div>
+
+
+                <div className=" info1 icon2 p-5">
+                  <img src={cs} className="img-fluid" alt="Icon" />
+                </div>
+                <div className=" info1 icon3 p-5">
+                  <img src={jquerys} className="img-fluid" alt="Icon" />
+                </div>
+                <div className=" info1 icon4 p-5">
+                  <img src={cpluss} className="img-fluid" alt="Icon" />
+                </div>
+                <div className=" info1 icon6 p-5">
+                  <img src={sqls} className="img-fluid" alt="Icon" />
+                </div>
+
+
+
+
               </div>
+              <div className="col-xl-5 col-lg-6 ">
+                <div className="form_main border rounded-4 p-4 hover">
+                  <h1 className="">Get in Touch</h1>
+                  <p>We Want To Hear From You</p>
+                  <form method="post" >
+                    <div className=" d-flex justify-content-between">
+                      <input
+                        type="text"
+                        name="Username"
+                        className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
+                        placeholder="Name"
+                        autoCorrect="off"
+                      />
+                      <input
+                        type="text"
+                        name="Email"
+                        className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
+                        placeholder="Email"
+                        autoCorrect="off"
+
+                      />
+                      <input
+                        type="text"
+                        name="Phone_number"
+                        className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
+                        placeholder="tel"
+                        autoCorrect="off"
+
+                      />
+                    </div>
+                    <div className=" p-3">
+                      <input
+                        type="text"
+                        name="subject"
+                        className="  py-4 rounded-4 w-100 bg text-light h5"
+                        placeholder="Subject"
+                        autoCorrect="off"
+
+                      />
+                    </div>
+                    <div className=" p-3">
+                      <input
+                        type="text"
+                        name="message"
+                        className="  py-5 rounded-4 w-100 bg text-light h5"
+                        placeholder="Leave us a message..."
+                        autoCorrect="off"
+
+                      />
+                    </div>
+                    <div className=" p-3">
+                      {/* <button className="btn bg w-100 py-3 rounded-4  text-light h5" type="submit" name="submit">Sumbit Query</button> */}
+                      <input type="submit" className=" bg w-100 py-3 rounded-4  text-light h5" name="submit" />
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+
+
+
+
             </div>
           </div>
-          
         </div>
-   
+
+      </div>
+
 
 
 

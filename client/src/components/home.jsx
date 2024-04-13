@@ -1,7 +1,7 @@
-import React from "react"
-// import { useNavigate } from "react-router-dom";
+import React, { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import "../index.css";
-
+import axios from 'axios'
 import banner1 from "./images/a.png";
 import banner2 from "./images/b.png";
 import banner3 from "./images/c.png";
@@ -41,12 +41,40 @@ import phps from "./images/10s.png";
 import jquerys from "./images/11s.png";
 import bootstraps from "./images/12s.png";
 import androids from "./images/13s.png";
-
+// import LocomotiveScroll from 'locomotive-scroll';
 
 function Home() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+  // const locomotiveScroll = new LocomotiveScroll( {} );
+  const [user,setUser]=useState({
+    Username:'',Email:'',Phone_number:'',subject:'',message:''
+})
+let name,value;
+const handleInput=(e)=>{
 
+    name=e.target.name
+    value=e.target.value
+    setUser({...user,[name]:value})
+}
 
+const postdata=async(e)=>{
+    e.preventDefault()
+
+    try {
+      const ress = await axios.post("http://localhost:8484/contect", user);
+      console.log("Response Status:", ress.status);
+      
+      if (ress.status === 422) {
+          console.log("Navigating to /signin");
+          navigate("/signin");
+      } else {
+          console.log("Navigating to /jfiowjafjwaofjw");
+          navigate('/jfiowjafjwaofjw');
+      }
+  } catch (error) {
+      console.error("Error:", error);
+  }
+}
 
 
 
@@ -520,7 +548,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="container-fluid backround py-5 hover">
+      <div className="container-fluid  py-5 bg_1">
 
         <div className="container">
 
@@ -593,7 +621,7 @@ function Home() {
 
       </div>
 
-      <div className="container backround my-5 hover ">
+      <div className="container backround my-5  ">
         <div className="row ">
           <h1 className="text-center">WHAT POPULAR IN CODE+</h1>
 
@@ -823,7 +851,7 @@ function Home() {
                 <div className="form_main border rounded-4 p-4 hover">
                   <h1 className="">Get in Touch</h1>
                   <p>We Want To Hear From You</p>
-                  <form method="post" >
+                  <form method="post" action="/contect">
                     <div className=" d-flex justify-content-between">
                       <input
                         type="text"
@@ -831,6 +859,8 @@ function Home() {
                         className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
                         placeholder="Name"
                         autoCorrect="off"
+                        value={user.Username}
+                        onChange={handleInput}
                       />
                       <input
                         type="text"
@@ -838,7 +868,8 @@ function Home() {
                         className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
                         placeholder="Email"
                         autoCorrect="off"
-
+                        value={user.Email}
+                        onChange={handleInput}
                       />
                       <input
                         type="text"
@@ -846,7 +877,8 @@ function Home() {
                         className="mx-3 py-4 rounded-4 w-75 bg text-light h5"
                         placeholder="tel"
                         autoCorrect="off"
-
+                        value={user.Phone_number}
+                        onChange={handleInput}
                       />
                     </div>
                     <div className=" p-3">
@@ -856,7 +888,8 @@ function Home() {
                         className="  py-4 rounded-4 w-100 bg text-light h5"
                         placeholder="Subject"
                         autoCorrect="off"
-
+                        value={user.subject}
+                        onChange={handleInput}
                       />
                     </div>
                     <div className=" p-3">
@@ -866,12 +899,13 @@ function Home() {
                         className="  py-5 rounded-4 w-100 bg text-light h5"
                         placeholder="Leave us a message..."
                         autoCorrect="off"
-
+                        value={user.message}
+                        onChange={handleInput}
                       />
                     </div>
                     <div className=" p-3">
-                      {/* <button className="btn bg w-100 py-3 rounded-4  text-light h5" type="submit" name="submit">Sumbit Query</button> */}
-                      <input type="submit" className=" bg w-100 py-3 rounded-4  text-light h5" name="submit" />
+                 
+                      <input type="submit" className=" bg w-100 py-3 rounded-4  text-light h5" name="submit" onClick={postdata}/>
                     </div>
                   </form>
                 </div>

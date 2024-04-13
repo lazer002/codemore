@@ -20,8 +20,14 @@ Password:{
 Phone_number:{
     type:String
 
-}
-
+},
+messages:[{
+    Username:{ type:String},
+    Email:{ type:String},
+    Phone_number:{ type:String},
+    subject:{ type:String},
+    message:{ type:String}
+}]
 })
 
 
@@ -72,15 +78,15 @@ signup_schema.pre('save',async function (next) {
 
 
   
-// signup_schema.methods.addMessage = async function(Username,Email,Phone_number,subject,message){
-//     try{
-// this.messages=this.messages.concat({Username,Email,Phone_number,subject,message})
-// await this.save()
-// return this.messages
-//     }
-//     catch(err){
-//     console.log(er)}
-// }
+signup_schema.methods.addMessage = async function(Username,Email,Phone_number,subject,message){
+    try{
+this.messages=this.messages.concat({Username,Email,Phone_number,subject,message})
+await this.save()
+return this.messages
+    }
+    catch(err){
+    console.log(er)}
+}
 
 
 

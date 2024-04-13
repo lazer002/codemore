@@ -29,7 +29,7 @@ router.post('/signin', async (req, res) => {
         }else{
             const token = jwt.sign({ Email: user.Email }, process.env.Secret_key,{expiresIn:'1d'});
             res.cookie('token',token);
-        
+        res.cookie('user',user)
             return res.json("Success");
         }
         
@@ -142,31 +142,32 @@ router.post('/signup', async (req, res) => {
 
 
 
+ 
 
 
-
-router.get("/userpanel",Authentication,async (req, res) => {
+router.get("/userpanel",async (req, res) => {
     const user = await User.find({})
-    console.log(user);
+    console.log(req.session);
     res.json({user:user})
    
 })
 
-router.get("/contect", Authentication, (req, res) => {
- 
+router.get("/contect", (req, res) => {
+
 })
 
 
 
 
 router.post("/contect", Authentication, async (req, res) => {
+    console.log(req.body);
     try {
         const { Username, Email, Phone_number, subject, message } = req.body;
         if (!Username || !Email || !Phone_number || !subject || !message) {
 
             return res.status(422).json({ error: "fill all plz" })
         }
-        const contect = await User.findOne({ _id: req.userID })
+        const contect = await User.findOne({ Email: 'nik' })
         if (contect) {
             const newmessage = await contect.addMessage(Username, Email, Phone_number, subject, message)
 
@@ -181,7 +182,7 @@ router.post("/contect", Authentication, async (req, res) => {
 
 
 
-router.post("/news", Authentication, async (req, res) => {
+router.post("/news", async (req, res) => {
     try {
         const { newsemail } = req.body;
         if (newsemail) {

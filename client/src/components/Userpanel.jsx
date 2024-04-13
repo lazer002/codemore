@@ -16,7 +16,7 @@ function Userpanel() {
        
       .catch(err=>console.log(err))
     },[]);
-console.log(userdata[0].Username);
+
   return (
     <>
 
@@ -28,7 +28,7 @@ console.log(userdata[0].Username);
               <div className="card border-0 " >
                 <img src={Account} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h4 className="card-title">{userdata[0].Username}</h4>
+                  <h4 className="card-title">{userdata.Username}</h4>
                   <p className="card-text">Always Ready To Code</p>
                   <a href="/" className="btn btn-outline-light mb-3">Edit Profile</a>
 
@@ -77,9 +77,9 @@ console.log(userdata[0].Username);
                           </thead>
                           <tbody>
                             <tr>
-                              <td> {userdata[0].Username}</td>
-                              <td> {userdata[0].Email}</td>
-                              <td>  {userdata[0].Phone_number}</td>
+                              <td> {userdata.Username}</td>
+                              <td> {userdata.Email}</td>
+                              <td>  {userdata.Phone_number}</td>
                             </tr>
                           </tbody>
                         </table>

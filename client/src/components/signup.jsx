@@ -36,30 +36,30 @@ navigate("/signin")
 }}
 return(
 <>
-<div className="container my-5 animation_in">
+<div className="container my-5 animation_in bg_1 p-5 rounded-5">
 <div className="row ">
     <div className=" fw-bold info1 text-center mb-5"><span className="display-3"> Sign Up</span></div>
     <div className="col-md-6 col-12 form py-4 text-light">
         <form  method="post">
 <div className=" px-1 animation_in">
     <label for="">User Name</label> <br/>
-    <input type="text" className="py-1 my-2 w-100 rounded-2 bg" name="Username" value={user.Username} onChange={handleInput} autoCorrect="off"/>
+    <input type="text" className="py-3 my-2 w-100  bg-transparent border-0 border-bottom" name="Username" value={user.Username} onChange={handleInput} autoCorrect="off"/>
 </div>
 <div className=" px-1 animation_in">
     <label for="">Email</label> <br/>
-    <input type="text" className="py-1 my-2 w-100 rounded-2 bg" name="Email" value={user.Email} onChange={handleInput} autoCorrect="off"/>
+    <input type="text" className="py-3 my-2 w-100  bg-transparent border-0 border-bottom" name="Email" value={user.Email} onChange={handleInput} autoCorrect="off"/>
 </div>
 <div className=" px-1 animation_in">
     <label for="">Password</label> <br/>
-    <input type="text" className="py-1 my-2 w-100 rounded-2 bg" name="Password" value={user.Password} onChange={handleInput} autoCorrect="off"/>
+    <input type="text" className="py-3 my-2 w-100  bg-transparent border-0 border-bottom" name="Password" value={user.Password} onChange={handleInput} autoCorrect="off"/>
 </div>
 <div className=" px-1 my-3 animation_in">
     <label for="">Phone Number</label> <br/>
-    <input className="py-1 my-2 w-100 rounded-2 bg" name="Phone_number" value={user.Phone_number} onChange={handleInput} autoCorrect="off"/>
+    <input className="py-3 my-2 w-100  bg-transparent border-0 border-bottom" name="Phone_number" value={user.Phone_number} onChange={handleInput} autoCorrect="off"/>
 </div>
 
 <div className=" px-1 my-5 text-center">
-   <input type="submit" className="py-1 my-2 w-100 rounded-2 bg" onClick={postdata}/>
+   <input type="submit" className="py-3 my-2 w-100 rounded-2 bg_1" onClick={postdata}/>
 </div>
 </form>
 <div className=" px-1 text-center">

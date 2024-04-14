@@ -41,45 +41,49 @@ import phps from "./images/10s.png";
 import jquerys from "./images/11s.png";
 import bootstraps from "./images/12s.png";
 import androids from "./images/13s.png";
-// import LocomotiveScroll from 'locomotive-scroll';
+import ReactCardCarousel from 'react-card-carousel';
+import Card from "./card";
 
-function Home() {
+
+
+function Home({crs_img,crs_name}) {
   const navigate = useNavigate();
-  // const locomotiveScroll = new LocomotiveScroll( {} );
-  const [user,setUser]=useState({
-    Username:'',Email:'',Phone_number:'',subject:'',message:''
-})
-let name,value;
-const handleInput=(e)=>{
+  const [user, setUser] = useState({
+    Username: '', Email: '', Phone_number: '', subject: '', message: ''
+  })
+  let name, value;
+  const handleInput = (e) => {
 
-    name=e.target.name
-    value=e.target.value
-    setUser({...user,[name]:value})
-}
+    name = e.target.name
+    value = e.target.value
+    setUser({ ...user, [name]: value })
+  }
 
-const postdata=async(e)=>{
+  const postdata = async (e) => {
     e.preventDefault()
 
     try {
       const ress = await axios.post("http://localhost:8484/contect", user);
       console.log("Response Status:", ress.status);
-      
+
       if (ress.status === 422) {
-          console.log("Navigating to /signin");
-          navigate("/signin");
+        console.log("Navigating to /signin");
+        navigate("/signin");
       } else {
-          console.log("Navigating to /jfiowjafjwaofjw");
-          navigate('/jfiowjafjwaofjw');
+        console.log("Navigating to /jfiowjafjwaofjw");
+        navigate('/jfiowjafjwaofjw');
       }
-  } catch (error) {
+    } catch (error) {
       console.error("Error:", error);
+    }
   }
-}
+
 
 
 
   return (
     <>
+
       <div className="container backround my-5 py-5 hover" >
         <div className="row ">
           <div className="col-md-6 p-3">
@@ -104,7 +108,7 @@ const postdata=async(e)=>{
             </div>
 
             <div className=" info1 icon5 p-5">
-              <img src={html} className="img-fluid" alt="Icon" />
+              <img src={html} className="img-fluid " alt="Icon" />
             </div>
 
           </div>
@@ -158,395 +162,63 @@ const postdata=async(e)=>{
         </div>
       </div>
 
-      <div className="container px-5 backround mb-5 hover">
-        <div className="container-fluid">
+      <div className="container px-5 backround mb-5 hover ">
+        <div className="container-fluid h-80">
           <div className="row">
             <div className=" info1 icon3 p-5">
               <img src={bootstraps} className="img-fluid" alt="Icon" />
             </div>
-            <div className="col-8">
 
-              <div className="contect_body">
-
-                <div className="display-6 fw-semi-bold py-2">
-                  start your journey towards a successful <br /> career in the
-                  tech industry!
-                </div>
-                <div className="py-2"></div>
-                <button className="btn btn-outline-light px-5 my-3">
-                  Enroll Now
-                </button>
+            <div className="col-12 ">
+              <div className="display-6 fw-semi-bold py-2">
+                start your journey towards a successful <br /> career in the
+                tech industry!
               </div>
+           
+              <button className="btn btn-outline-light px-5 my-3">
+                Enroll Now
+              </button>
+          
             </div>
-            <div className="col-2">
-              <div className="  info1 p-5">
-                <img src={html} className="img-fluid" alt="Icon" />
-              </div></div>
 
-            <div className="col-12 contect_form">
-              <div className="row justify-content-center">
-                <div className="col-xl-10 col-lg-8 col-sm-10 col-12 ">
-                  <div className="container-fluid text-center my-5">
-                    <div className="row">
-                      <div
-                        id="recipeCarousel"
-                        className="carousel"
-                        data-bs-ride="carousel"
-                      >
-                        <div className="carousel-inner" role="listbox">
-                          <div
-                            className="carousel-item active slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={android}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">ANDROID</div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={c}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">
-                                      C LANGUAGE
-                                    </div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={python}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">PYTHON</div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={web}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">
-                                      WEB DESIGNING
-                                    </div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={digital}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">
-                                      DIGITAL MARKETING
-                                    </div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={cplus}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">C++</div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={angular}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">ANGULAR</div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={sql}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">SQL </div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={html}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">HTML5</div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={java}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">JAVA</div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={php}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">PHP</div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={jquery}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">JQUERY</div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                          <div
-                            className="carousel-item slide"
-                            data-bs-interval="2000"
-                          >
-                            <div className="col-md-3 ">
-                              <a
-                                href="/"
-                                className="text-decoration-none text-light"
-                              >
-                                <div className="card bg text-light hover">
-                                  <div className="card-body text-center">
-                                    <img
-                                      src={bootstrap}
-                                      className="img-fluid"
-                                      alt="meeting"
-                                    />
-                                  </div>
-                                  <div className="card-footer border-0">
-                                    <div className="fw-semi-light">
-                                      BOOTSTRAP
-                                    </div>
-                                  </div>
-                                </div>
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                        <a
-                          className="carousel-control-prev bg-transparent w-aut"
-                          href="#recipeCarousel"
-                          role="button"
-                          data-bs-slide="prev"
-                        >
-                          <span
-                            className="carousel-control-prev-icon"
-                            aria-hidden="true"
-                          ></span>
-                        </a>
-                        <a
-                          className="carousel-control-next bg-transparent w-aut"
-                          href="#recipeCarousel"
-                          role="button"
-                          data-bs-slide="next"
-                        >
-                          <span
-                            className="carousel-control-next-icon"
-                            aria-hidden="true"
-                          ></span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+            
+          </div>
+          
+          <div className="icon2  info1">
+              <img src={html} className="img-fluid w-50" alt="Icon" />
+            </div>
+            <div className="carousel_course ">
+
+
+
+              <ReactCardCarousel autoplay={true} autoplay_speed={2500}>
+
+              <Card crs_img={android} crs_name='ANDROID' />
+              <Card crs_img={c} crs_name='C LANGUAGE' />
+              <Card crs_img={python} crs_name='PYTHON' />
+              <Card crs_img={web} crs_name='WEB DESIGNING' />
+              <Card crs_img={digital} crs_name='DIGITAL MARKETING' />
+              <Card crs_img={cplus} crs_name='C++' />
+              <Card crs_img={angular} crs_name='ANGULAR' />
+              <Card crs_img={sql} crs_name='SQL' />
+              <Card crs_img={html} crs_name='HTML5' />
+              <Card crs_img={java} crs_name='JAVA' />
+              <Card crs_img={php} crs_name='PHP' />
+              <Card crs_img={bootstrap} crs_name='BOOTSTRAP' />
+              <Card crs_img={jquery} crs_name='JQUERY' />
+
+              </ReactCardCarousel>
+
+
+
             </div>
           </div>
-
         </div>
-      </div>
+
+
+
+
 
       <div className="container-fluid  py-5 bg_1">
 
@@ -565,11 +237,14 @@ const postdata=async(e)=>{
                 organizations. Our job oriented courses and their curriculum
                 includes interview prepration classes.
               </p>
+              <div className=" info1 icon1 p-5">
+                    <img src={cplus} className="img-fluid" alt="Icon" />
+                  </div>
             </div>
             <div className="col-lg-6 brands">
               <div className="row justify-content-center">
                 <div className="col-4 brand_w ">
-                  <img src={microsoft} alt="amazone" className="img-fluid shadow hover" />
+                  <img src={microsoft} alt="amazone" className="img-fluid shadow " />
                 </div>
               </div>
               <div className="row">
@@ -606,20 +281,22 @@ const postdata=async(e)=>{
               </div>
 
               <div className="row justify-content-center ">
-                <div className="col-4 brand_w my-3 p-3 shadow">
-                  <h5 className="ms-3 hover">+ many more</h5>
-                  <div className=" info1 icon1 p-5">
-                    <img src={cplus} className="img-fluid" alt="Icon" />
-                  </div>
+                <div className="col-4 brand_w my-3 p-3 shadow1 hover">
+                  <h5 className="ms-3 ">+ many more</h5>
+               
                 </div>
+            
               </div>
-
+             
             </div>
-
+            
           </div>
         </div>
 
       </div>
+
+
+
 
       <div className="container backround my-5  ">
         <div className="row ">
@@ -801,9 +478,9 @@ const postdata=async(e)=>{
       </div>
 
 
-      <div className="container-fluid">
+      <div className="container-fluid bg_1">
 
-        <div className="container position-relative">
+        <div className="container position-relative ">
 
           <div className="row">
 
@@ -833,9 +510,7 @@ const postdata=async(e)=>{
                 <div className=" info1 icon2 p-5">
                   <img src={cs} className="img-fluid" alt="Icon" />
                 </div>
-                <div className=" info1 icon3 p-5">
-                  <img src={jquerys} className="img-fluid" alt="Icon" />
-                </div>
+           
                 <div className=" info1 icon4 p-5">
                   <img src={cpluss} className="img-fluid" alt="Icon" />
                 </div>
@@ -843,7 +518,9 @@ const postdata=async(e)=>{
                   <img src={sqls} className="img-fluid" alt="Icon" />
                 </div>
 
-
+                <div className=" info1 icon5 p-1">
+                  <img src={jquerys} className="img-fluid" alt="Icon" />
+                </div>
 
 
               </div>
@@ -904,8 +581,8 @@ const postdata=async(e)=>{
                       />
                     </div>
                     <div className=" p-3">
-                 
-                      <input type="submit" className=" bg w-100 py-3 rounded-4  text-light h5" name="submit" onClick={postdata}/>
+
+                      <input type="submit" className=" bg w-100 py-3 rounded-4  text-light h5" name="submit" onClick={postdata} />
                     </div>
                   </form>
                 </div>

@@ -42,17 +42,17 @@ if(res.status === 200){
 return(
 <>
 
-<div className="container my-5">
+<div className="container my-5 bg_1 p-5 rounded-5">
             <div className="row ">
               <div className=" fw-bold info1 text-center mb-5">
                 <span className=" display-3">Sing In</span>
               </div>
-              <div className="col-md-6 col-12 form py-4 text-light">
+              <div className="col-md-6 col-12 form py-4 text-light fs-5">
                 <form  method="post">
                   <div className=" px-1 animation_in">
                     <label >Email</label> <br />
                     <input
-                      type="text" className="py-1 my-2 w-100 rounded-2 bg"
+                      type="text" className="py-3 my-2 w-100  bg-transparent border-0 border-bottom"
                       name="Email" value={user.Email}
                       onChange={handleInput} autoCorrect="off"
                     />
@@ -63,13 +63,13 @@ return(
                       type="text"
                       name="Password" value={user.Password}
                       onChange={handleInput} autoCorrect="off"
-                      className="py-1 my-2 w-100 rounded-2 bg"
+                      className="py-3 my-2 w-100  bg-transparent border-0 border-bottom"
                     />
                   </div>
                   <div className=" px-1 my-5 text-center">
                     <input
                       type="submit"
-                      className="py-1 my-2 w-100 rounded-2 bg"
+                      className="py-3 my-2 w-100 rounded-2 bg_1"
                       onClick={postdata} 
                     />
                   </div>

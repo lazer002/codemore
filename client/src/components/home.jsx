@@ -71,7 +71,7 @@ function Home({crs_img,crs_name}) {
         navigate("/signin");
       } else {
         console.log("Navigating to /jfiowjafjwaofjw");
-        navigate('/jfiowjafjwaofjw');
+        navigate('/');
       }
     } catch (error) {
       console.error("Error:", error);

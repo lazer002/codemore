@@ -24,21 +24,25 @@ const handleInput=(e)=>{
     setUser({...user,[name]:value})
 }
 
-const postdata=async(e)=>{
-    e.preventDefault()
-
-
-    const res=await axios.post("http://localhost:8484/signin",{user})
-if(res.status === 200){
-
-  navigate("/Userpanel")
- 
-}else{
-  console.log('jfwjafiojwajfiwajfijwa');
+const postdata = async (e) => {
+    e.preventDefault();
+    try {
+        const res = await axios.post("http://localhost:8484/signin", { user });
+        if (res.status === 200) {
+            console.log('login');
+            navigate("/");
+        } else {
+            console.log('Unexpected response:', res.status);
+        }
+    } catch (error) {
+        if (error.response && error.response.data && error.response.data.error === "Token not provided") {
+            alert("Please log in first");
+        } else {
+            console.error('Error:', error.message);
+        }
+    }
 }
 
-
-}
 return(
 <>
 
